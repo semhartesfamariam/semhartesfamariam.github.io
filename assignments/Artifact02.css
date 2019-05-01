@@ -42,10 +42,12 @@ float:left;
   clear:both;
 }
 
-footer {
-background-color:#BCC6CC;
-color:inherit;
-  
+#footer {
+ background-color:#BCC6CC;
+ border:solid 1px;
+ padding: 10px;
+ margin:10px;
+ text-align:center;
 }
   #container {
 margin-top:20%;
