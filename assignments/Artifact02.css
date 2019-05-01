@@ -9,7 +9,7 @@ left:0px; */
 padding:10px;
 margin:0px;
 width:100%;
-background-color:lightblue;
+background-color:#BCC6CC;
 color: black;
 text-align:center;
 z-index:10;
@@ -42,7 +42,7 @@ float:left;
   clear:both;
 }
 footer {
-background-color: lightblue;
+background-color: #BCC6CC;
 color: inherit;
 }
   #container {
