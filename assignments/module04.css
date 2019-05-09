@@ -27,7 +27,7 @@ body {  background-image: url("https://images.unsplash.com/photo-1504532724559-2
 			
 .column1, .column2, .column3 {
   background-color: #D733FF;
-  width: 30%;
+  width: 31.3%;
   float: left;
   margin: 1px;
     display: table-cell;
@@ -36,12 +36,10 @@ body {  background-image: url("https://images.unsplash.com/photo-1504532724559-2
 
 .column1 {
   background-color:#d966ff;
-}
-
+  margin-right: 0%;}
 .colunm2 {
   background-color:#ff6666;
-  margin-left: 3.5%;
-  margin-right: 3.5%;
+  margin-right: 0%;
 }
 .colunm3 {
   margin-right: 0%;
