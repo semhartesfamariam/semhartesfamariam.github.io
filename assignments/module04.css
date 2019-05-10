@@ -24,6 +24,10 @@ body {  background-image: url("https://images.unsplash.com/photo-1504532724559-2
     background-position: right;
     background-repeat:no-repeat;
 }
+	.column1, .column2, .column3 {
+	width: 31.3%;
+         float: left;
+	margin: 1%;}
 .column1 {
   background-color:#d966ff;
   margin-right: 0%;}
