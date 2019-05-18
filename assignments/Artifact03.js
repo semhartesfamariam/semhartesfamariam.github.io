@@ -1,4 +1,5 @@
-//var colorEven = "orange";
+ //var rHeight =5;
+ //var colorEven = "orange";
  //var colorOdd = "black";
  //var symbol ="*";
 
@@ -107,8 +108,3 @@ function downRight(pHeight, pColorEven, pColorOdd, pSymbol){
   rLine +="<span style='color:" + pColorOdd + ";'>" + pSymbol +"</span>";
 
   }
-   rLine +="</p>";
-   //console.log(rLine);
-  }
- document.getElemenetById("downright").innerHTML = rLine;
-}
