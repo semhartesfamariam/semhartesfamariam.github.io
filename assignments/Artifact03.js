@@ -1,5 +1,4 @@
-//var rHeight =5;
- //var colorEven = "orange";
+//var colorEven = "orange";
  //var colorOdd = "black";
  //var symbol ="*";
 
@@ -104,3 +103,7 @@ function downRight(pHeight, pColorEven, pColorOdd, pSymbol){
   //even
   rLine +="<span style='color:" + pColorEven + ";'>" + pSymbol +"</span>";
   else
+  //odd
+  rLine +="<span style='color:" + pColorOdd + ";'>" + pSymbol +"</span>";
+
+  }
