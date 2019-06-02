@@ -1,19 +1,20 @@
+function ValidateForm(){
+ var validUsername = false;
+ var validUserpassword = false;
+ var validFirstName = false;
+ var validPhone = false;
+ 
+ var letters = /^[A-Za-z]+$/;
+ var numbers = /^[0-9]+$/;
+ 
+ var errorMessages =""; //All the error Messages are going to stay in this variable
+ /***********VALIDATES USERNAEM ******** */
+ //Required filed
+ //This syntax is using name-of-form.name-of-filed.value
+ //you can also use document .getElementById("id-of-filed").value
 
- var frmvalidator = new Validator("myform");
- frmvalidator.addValidation("FirstName","req","Please enter your First Name");
- frmvalidator.addValidation("FirstName","maxlen=20",
-        "Max length for FirstName is 20");
-frmvalidator.addValidation("FirstName",maxlen=2)
- 
- frmvalidator.addValidation("LastName","req");
- frmvalidator.addValidation("LastName","maxlen=20");
- 
- frmvalidator.addValidation("Email","maxlen=50");
- frmvalidator.addValidation("Email","req");
- frmvalidator.addValidation("Email","email");
- 
- frmvalidator.addValidation("Phone","maxlen=50");
- frmvalidator.addValidation("Phone","numeric");
- 
- frmvalidator.addValidation("Address","maxlen=50");
- frmvalidator.addValidation("Country","dontselect=000");
+ /***********VALIDATES USERNAEM ******** */
+ //Required. Maximum 12 characters.
+ if (myContact.username.value.length > 12 ||
+ myContact.username.value===null || 
+ myContact.username.value==="")
