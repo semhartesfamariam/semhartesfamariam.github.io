@@ -1,57 +1,59 @@
+var frmvalidator = new Validator("myform");
+frmvalidator.addValidation("Name","req","Please enter your Name");
+frmvalidator.addValidation("Name","maxlen=70",
+       "Max length for Name is 70");
 
-function ValidateForm(){
-   var validUsername = false;
-   var validUserpassword = false;
-   var validFirstName = false;
-   var validPhone = false;
-   
-  var letters = /^[A-Za-z]+$/;
-  var numbers = /^[0-9]+$/;
-   
-  var errorMessages =""; //All the error Messages are going to stay in this variable
-   /***********VALIDATES USERNAEM ******** */
-   //Required filed
-   //This syntax is using name-of-form.name-of-filed.value
-   //you can also use document .getElementById("id-of-filed").value
+ frmvalidator.addValidation("Email","req", "Please enter your email");
+ frmvalidator.addValidation("Email","maxlen=50",
+      "Max lenght for Email is 50 characters");
 
-   /***********VALIDATES USERNAEM ******** */
-   //Required. Maximum 12 characters.
-   if (myContact.username.value.length > 12 ||
-     myContact.username.value===null || 
-     myContact.username.value==="")
-          errorMessages += "<p>The username must be less than 12 characters and is required</P>";
-   else 
-       validUsername =true;
 
-   //console.log(validUsername);
-     
-  /***********VALIDATES PASSWORD ******** */
-      if (myContact.password.value==null || 
-          myContact.password.value=== "" ||
-          myContact.password.value.length > 7){
-      errorMessages += "<p>The password must be less than 7 characters and it is required</P>";}
-      else 
-         validUserPassword =true;
+ var frmvalidator = new Validator("myform");
+ frmvalidator.addValidation("Comment","req","Please enter your comment here");
 
-      /***********VALIDATES FIRSTNAME ******** */
-      if (myContact.firstname.value==null ||
-          myContact.firstname.value=== "" || 
-          myContact.firstname.value.length >20 ||
-          !myContact.firstname.value.match(letters))
-      errorMessages += "<p>The firstname must be less than 20 characters and it is required. only letters and numbers are accepted</P>";
-      else 
-      validFirstName =true;
+//Validate the name
+ function validateForm(){
+   var LETTERS = /^[A-Za-z]+$/;
+   var NUMBERS = /[0-9]/g;
+   var errorMessages= "";
+   //1) Create variable
+   var validname=false;
+   //2) read value from HTML
+   var name = document.getElementById("Name").value;
+   //3) Do validation
+   if (name==="null" || name==="" || name.length > 20  )
+       errorMessages += "<p>The name is required and can only accept alphabetical values and maximum 20 characters</p>";
+   else
+   {
+   //  if(firstname.match(^[a-zA-Z\\s]*$))
+   if (name.match(NUMBERS) == null)
+        {
+          validname = true;
+        }
+      else
+        {
 
-      /***********VALIDATES PHONE NUMBER ******** */
-      if (myContact.phone.value==null ||
-          myContact.phone.value=== "" ||
-          myContact.phone.value.length >15 || 
-          !myContact.Phone.value.match(numbers))
-      errorMessages += "<p>The phone number must be less than 15 characters and it is required. only numbers are accepted</P>";
-      else 
-      validPhone =true;
-
-      document.getElementById("errorMessages").innerHTML = errorMessages;
-      //make sure you return all the boolean variable that are checking each filed
-      return (validUsername && validUserpassword && validFirstName && validPhone) ;
+          errorMessages += "<p>The name can only accept alphabetical values</p>";
+           validname = false;
+        }
     }
+
+//***to validate the email
+var vaildeEmail=false;
+var userEmail = document.getElementById("Email").value;
+var atpos = userEmail.indexOf("@");
+var dotpos = userEmail.lastIndexOf(".");
+if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=userEmail.length)
+  errorMessages +="<p>Invalid email</p>";
+else
+ validEmail = true;
+    // send error message. For example:  errorMessages = "<p>Invalid email</p>";
+//document.getElementById("errorMessages").innerHTML = errorMessages.toString();
+    //return validEmail; //Or assign the value to a variable. For example validEmail = true;
+    //return (validFirstname && validLastname && validEmail);
+
+
+document.getElementById("errorMessages").innerHTML = errorMessages.toString();
+
+  return (validname && validEmail);
+}
