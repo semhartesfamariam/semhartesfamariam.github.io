@@ -1,5 +1,4 @@
 
-<script>
 	var currentTime = new Date(),
       hours = currentTime.getHours(),
       minutes = currentTime.getMinutes();
@@ -18,7 +17,7 @@
 	}
 
 	document.write(hours + ":" + minutes + " " + suffix)
-</script>
+
 <script>
   var currentDate = new Date(),
       day = currentDate.getDate(),
