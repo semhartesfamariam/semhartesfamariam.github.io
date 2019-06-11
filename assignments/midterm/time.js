@@ -1,27 +1,23 @@
 
-	var currentTime = new Date(),
-      hours = currentTime.getHours(),
-      minutes = currentTime.getMinutes();
 
-	if (minutes < 10) {
-	 minutes = "0" + minutes;
-  }
+var currentDate = new Date(),
+     day = currentDate.getDate(),
+     month = currentDate.getMonth() + 1,
+     year = currentDate.getFullYear();
+ //document.write(day + "/" + month + "/" + year)
+ var currentTime = new Date(),
+       hours = currentTime.getHours(),
+       minutes = currentTime.getMinutes();
 
-	var suffix = "AM";
-	if (hours >= 12) {
-    suffix = "PM";
-    hours = hours - 12;
-	}
-	if (hours == 0) {
-	 hours = 12;
-	}
+ 	if (minutes < 10) {
+ 	 minutes = "0" + minutes;
+   }
 
-	document.write(hours + ":" + minutes + " " + suffix)
+ 	//document.write(hours + ":" + minutes)
 
-<script>
-  var currentDate = new Date(),
-      day = currentDate.getDate(),
-      month = currentDate.getMonth() + 1,
-      year = currentDate.getFullYear();
-  document.write(day + "/" + month + "/" + year)
-</script>
+
+
+var showdate = document.getElementById("demo").innerHTML;
+//showdate.style.color= "red";
+//showdate.textContent= day + "/" + month + "/" + year;
+ document.getElementById("demo").innerHTML= day + "/" + month + "/" + year + "  " + hours + ":" + minutes;
