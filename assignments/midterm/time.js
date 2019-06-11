@@ -1,7 +1,28 @@
 
-<div class="right"> 
-<p id="demo">Mon Jun 10 2019 18:40:46 GMT-0700 (Pacific Daylight Time)</p>
-
 <script>
-document.getElementById("demo").innerHTML = Date();
+	var currentTime = new Date(),
+      hours = currentTime.getHours(),
+      minutes = currentTime.getMinutes();
+
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+  }
+
+	var suffix = "AM";
+	if (hours >= 12) {
+    suffix = "PM";
+    hours = hours - 12;
+	}
+	if (hours == 0) {
+	 hours = 12;
+	}
+
+	document.write(hours + ":" + minutes + " " + suffix)
+</script>
+<script>
+  var currentDate = new Date(),
+      day = currentDate.getDate(),
+      month = currentDate.getMonth() + 1,
+      year = currentDate.getFullYear();
+  document.write(day + "/" + month + "/" + year)
 </script>
