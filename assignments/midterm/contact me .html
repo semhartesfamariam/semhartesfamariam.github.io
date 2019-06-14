@@ -34,14 +34,29 @@
  
 <div id="content">
 
-<h2>Contact me</h2>
-<form action="https://semhartesfamariam.github.io/assignments/midterm/thankyou.html">
-Name: <input type="text" name="name" value=""><br>
-Email: <input type="text" name="email" value=""><br><br>
- <h3>Comment:</h3>
- <textarea rows="4" cols="50"> </textarea>
-<input type="submit" value="Submit">
- </form>
+<h1>Contact Form</h1>
+    <div id="errorMessages"></div>
+    <form action="thankyou.html" id="myform" name=myContact onsubmit="return ValidateForm();">
+      
+      <p>
+        <label class="form-label" for='FirstName'>First Name:</label>
+        <input class="form-control" type="text" maxlength="20" id="FirstName" name="FirstName" required />
+      </p>
+      <p>
+        <label class="form-label" for='LastName'>Last Name:</label>
+        <input class="form-control" type="text" maxlength="50" id="LastName" name="LastName" required/>
+      </p>
+      <p>
+        <label class="form-label" for='Email'>Email:</label>
+        <input class="form-control" type="email" id="EMail" name="EMail" required/>
+      </p>
+      <p>
+        <label class="form-label" for='Comment'>Comment:</label>
+        <textarea class="form-control" cols="50" rows="5" id="Address" name="Address" required></textarea>
+      </p>
+ <input type="submit" name="submit" value="Submit">
+
+
 <div class="clear"> </div>
 
 </div>
